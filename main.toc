@@ -1,0 +1,19 @@
+\contentsline {chapter}{Certificate}{i}{dummy.2}
+\vspace {1em}
+\contentsline {chapter}{Abstract}{ii}{dummy.3}
+\vspace {1em}
+\contentsline {chapter}{Acknowledgements}{iii}{dummy.4}
+\vspace {1em}
+\contentsline {chapter}{Contents}{iv}{dummy.5}
+\contentsline {chapter}{List of Figures}{v}{dummy.7}
+\contentsline {chapter}{List of Tables}{vi}{dummy.9}
+\contentsline {chapter}{Abbreviations}{vii}{dummy.11}
+\contentsline {chapter}{Symbols}{viii}{dummy.14}
+\contentsline {chapter}{\numberline {1}Chapter Title Here}{1}{chapter.17}
+\contentsline {section}{\numberline {1.1}Main Section 1}{1}{section.18}
+\contentsline {subsection}{\numberline {1.1.1}Subsection 1}{1}{subsection.19}
+\contentsline {subsection}{\numberline {1.1.2}Subsection 2}{1}{subsection.20}
+\contentsline {section}{\numberline {1.2}Main Section 2}{2}{section.21}
+\vspace {2em}
+\contentsline {chapter}{\numberline {A}Appendix A}{3}{appendix.22}
+\vspace {2em}
