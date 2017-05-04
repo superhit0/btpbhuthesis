@@ -5,9 +5,29 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 % prints author names as small caps
 
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section] % numbered by section
+
+\def\BState{\State\hskip-\ALG@thistlm}
+\newcommand{\plus}[1]{{#1}^{+}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\algnewcommand\algorithmicforeach{\textbf{foreach}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+
+\makeatletter
+  \def\th@definition{
+  \thm@headfont{\bfseries} % Heading font is bold
+  \thm@notefont{} % Note is same as heading
+}
+\makeatother
 
 %\usepackage{subcaption} %incompatible with subfig
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
@@ -54,16 +74,21 @@
 {\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
 \HRule \\[1.5cm] % Horizontal line
  
-\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{by}\\[0.4cm]
+\large \textit{A report submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+\textit{by}\\
+\authornames\\
+13075002\\
+\deptname\\[0.2cm]
+\supname\\
+Associate Professor\\
+\deptname\\[0.4cm]
 
-\href{http://home.iitk.ac.in/~saiwal}{\authornames}
 
 \vfill
 \graphicspath{ {./Figures/} }
 \begin{figure}[hb]
   \centering
-  \includegraphics[width=0.4\linewidth]{Pictures/bhulogo.png}
+  \includegraphics[width=0.4\linewidth]{Pictures/bhulogo}
 \end{figure}
 
 \DEPTNAME\\ % Research group name and department name
@@ -80,21 +105,40 @@
 %	Your institution may give you a different text to place here
 %----------------------------------------------------------------------------------------
 
-\Declaration{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+\begin{minipage}{0.8\textwidth}
+	\begin{flushleft} \large
+	\centering
+		\deptname\\
+		\textbf{INDIAN INSTITUTE OF TECHNOLOGY}\\
+		(BANARAS HINDU UNIVERSITY),\\
+		VARANASI - 221005, INDIA
+	\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}{0.2\textwidth}
+	{\begin{flushright}
+	\includegraphics[scale=0.06]{Pictures/bhulogo}
+	\end{flushright}}
+\end{minipage}
 
-It is certified that the work contained in this thesis entitled ''\ttitle'' by ''\authornames'' has been carried out under my supervision and that it has not been submitted elsewhere for a degree.
+\noindent\rule{\textwidth}{0.4pt}
+
+\Declaration{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics\
+
+It is certified that the work contained in this report entitled \textbf{''\ttitle''} by \textbf{''\authornames''}(13075002) hin partial fulfillment of the requirements for the Under Graduate Degree in Computer Science and Engineering, session 2013-2017, has been carried out under the supervision of \textbf{Dr. Bhaskar Biswas}, Associate Professor, at the Department of Computer Science and Engineering, IIT (BHU), Varanasi. It is also certified that the report embodies the results of the work are authentic and carried out by him within the prescribed period.
 \\[2cm]
-
+\\ \\
 \begin{minipage}{0.4\textwidth}
 	\begin{flushleft} \large
-		\emph{\large \today}\\[2cm] % Date
+		Dated: \\ % Date
+		Place: \emph{Varanasi}
 	\end{flushleft}
 \end{minipage}
 \begin{minipage}{0.65\textwidth}
-	{\begin{center} \large
-		\supname
+	{\begin{center} \Large
+		\textbf{\supname}
 		\begin{center}
-			{Professor\\ 
+			{Associate Professor\\ 
 			\normalsize{\deptname\\
 			\univname}}
 		\end{center}
@@ -105,15 +149,32 @@ It is certified that the work contained in this thesis entitled ''\ttitle'' by '
 \clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
+%	UNDERTAKING
 %----------------------------------------------------------------------------------------
 
-\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+\Undertaking{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-\abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
-
-Enter Abstract Content here...
-}
+I, \textbf{\authornames}, certify that the work embodied in this B.Tech. Project is my own bonafide work carried out under the supervision of \textbf{\supname} at the \univname \ and the matter embodied in this project has not been submitted for the award of any other degree.\par 
+I declare that I have faithfully acknowledged, given credit to and referred to the researchers wherever their works have been cited in the report. I further certify that I have not wilfully copied other's work, paragraph, text, data, results, etc. reported in the jounals, books, magazines, reports, dissertations, thesis, etc., or available at web-sites and included them in this dissertations and cited as my own work.
+\\[2cm]
+\\ \\
+\begin{minipage}{0.4\textwidth}
+	\begin{flushleft} \large
+		Dated: \\ % Date
+		Place: \emph{Varanasi}
+	\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.65\textwidth}
+	{\begin{center} \Large
+		\textbf{\authornames}
+		\begin{center}
+			{13075002\\ 
+			\normalsize{\deptname\\
+			\univname}}
+		\end{center}
+	\end{center}}
+\end{minipage}
+\vfill{}}
 
 \clearpage % Start a new page
 
@@ -125,8 +186,26 @@ Enter Abstract Content here...
 
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 
-I would extend my sincerest gratitude...
-
+I would like to add a few words for all the people who helped me in numerous ways during the project. I would like to express a sense of gratitude towards my supervisor \textbf{\supname}, for his constant and generous support, encouragement and guidance. It's my honor and privilege to have him as my supervisor for the B. Tech Project work at \univname. \par 
+I take this oppurtunity to express my gratitude towards all the faculty members, technical staff and non-technical staff of the \deptname for their help, support and co-operation. I am also indebted to all my friends and my family for their help and best wishes.
+\\[2cm]
+\begin{minipage}{0.4\textwidth}
+	\begin{flushleft} \large
+		%Dated: \emph{\large \today}\\ % Date
+		%Place: \emph{Varanasi}
+	\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.65\textwidth}
+	{\begin{center} \Large
+		\textbf{\authornames}
+		\begin{center}
+			{13075002\\ 
+			\normalsize{\deptname\\
+			\univname}}
+		\end{center}
+	\end{center}}
+\end{minipage}
+\vfill{}
 }
 \clearpage % Start a new page
 
@@ -145,6 +224,8 @@ I would extend my sincerest gratitude...
 \lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
 \listoftables % Write out the List of Tables
 
+\clearpage % Start a new page
+
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
@@ -156,43 +237,55 @@ I would extend my sincerest gratitude...
 \lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
 \listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
 {
-\textbf{FEA} & \textbf{F}inite \textbf{E}lement \textbf{A}nalysis \\
-\textbf{FEM} & \textbf{F}inite \textbf{E}lement \textbf{M}ethod \\
-\textbf{LVDT} & \textbf{L}inear \textbf{V}ariable \textbf{D}ifferential \textbf{T}ransformer \\
-\textbf{RC} & \textbf{R}einforced \textbf{C}oncrete
+\textbf{HUI} & \textbf{H}igh \textbf{U}tility \textbf{I}temsets \\
+\textbf{FIM} & \textbf{F}requent \textbf{I}temset \textbf{M}ining \\
+\textbf{TWU} & \textbf{T}ransaction \textbf{W}eighted \textbf{U}tility \\
+\textbf{HUIM} & \textbf{H}igh \textbf{U}tility \textbf{I}temset \textbf{M}ining\\
+\textbf{LUR} & \textbf{L}ength \textbf{U}pper-bound \textbf{R}eduction \\
 %\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
 }
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
-%
-%\clearpage % Start a new page
-%
-%\lhead{\emph{Physical Constants}} % Set the left side page header to "Physical Constants"
-%
-%\listofconstants{lrcl} % Include a list of Physical Constants (a four column table)
-%{
-%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-%% Constant Name & Symbol & = & Constant Value (with units) \\
-%}
+
+\clearpage % Start a new page
+
+\lhead{\huge \textbf{List Of Definitions}} % Set the left side page header to "Physical Constants"
+
+\input{Chapters/Definitions}
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+
+\abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+
+\input{Chapters/Abstract}
+}
+
+\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
 
-\clearpage % Start a new page
-
-\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
-
-\listofnomenclature{lll} % Include a list of Symbols (a two column table)
-{
-$D^{el}$ & elasticity tensor \\
-$\sigma$ & stress tensor \\
-$ \varepsilon $ & strain tensor \\
-% Symbol & Name & Unit \\
-
-}
+%\clearpage % Start a new page
+%
+%\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
+%
+%\listofnomenclature{lll} % Include a list of Symbols (a two column table)
+%{
+%$D^{el}$ & elasticity tensor \\
+%$\sigma$ & stress tensor \\
+%$ \varepsilon $ & strain tensor \\
+%% Symbol & Name & Unit \\
+%
+%}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
@@ -217,27 +310,27 @@ $ \varepsilon $ & strain tensor \\
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
 
-\input{Chapters/Chapter1}
-%\input{Chapters/Chapter2} 
-%\input{Chapters/Chapter3}
-%\input{Chapters/Chapter4} 
-%\input{Chapters/Chapter5} 
-%\input{Chapters/Chapter6} 
+\input{Chapters/Introduction}
+\input{Chapters/Relwork} 
+\input{Chapters/Algorithm}
+\input{Chapters/Results} 
+\input{Chapters/Conclusion} 
+\input{Chapters/FutureWork} 
 %\input{Chapters/Chapter7} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
-
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-
-\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
-
-% Include the appendices of the thesis as separate files from the Appendices folder
-% Uncomment the lines as you write the Appendices
-
-\input{Appendices/AppendixA}
-%\input{Appendices/AppendixB}
+%
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+%
+%\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+%
+%% Include the appendices of the thesis as separate files from the Appendices folder
+%% Uncomment the lines as you write the Appendices
+%
+%\input{Appendices/AppendixA}
+%%\input{Appendices/AppendixB}
 %\input{Appendices/AppendixC}
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
@@ -254,6 +347,6 @@ $ \varepsilon $ & strain tensor \\
 
 \bibliographystyle{apalike} % Use the "custom" BibTeX style for formatting the Bibliography
 
-\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\bibliography{btp} % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
 \end{document}  

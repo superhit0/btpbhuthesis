@@ -51,7 +51,20 @@
 \thispagestyle{plain}
 %\null\vfil
 %\vskip 60\p@
-\begin{center}{\huge\bf Certificate\par}\end{center}
+\begin{center}{\huge\bf CERTIFICATE\par}\end{center}
+%\vskip 60\p@
+{\normalsize #1}
+\vfil\vfil\null
+%\cleardoublepage
+}
+
+\newcommand\Undertaking[1]{
+\btypeout{Undertaking}
+\addtotoc{Undertaking}
+\thispagestyle{plain}
+%\null\vfil
+%\vskip 60\p@
+\begin{center}{\huge\bf Undertaking\par}\end{center}
 %\vskip 60\p@
 {\normalsize #1}
 \vfil\vfil\null
@@ -207,12 +220,12 @@
                 {INDIAN INSTITUTE OF TECHNOLOGY (B.H.U.), VARANASI}}
 %-------------------------------------------------                
 \department{\texorpdfstring{\href{Department or School Web Site URL Here (include http://www.iitbhu.ac.in/cse/index.html)} % Your department's URL
-                {Department of Computer Engineering}} % Your department's name - used in the title page and abstract
-                {Department of Computer Engineering}}
+                {Department of Computer Science and Engineering}} % Your department's name - used in the title page and abstract
+                {Department of Computer Science and Engineering}}
 %-------------------------------------------------                
 \DEPARTMENT{\texorpdfstring{\href{Department or School Web Site URL Here (include http://www.iitbhu.ac.in/cse/index.html)} % Your department's URL
-                {DEPARTMENT OF COMPUTER ENGINEERING}} % Your department's name in capitals - this is not currently used anywhere in the template, cite it with \DEPTNAME if you want it
-                {DEPARTMENT OF COMPUTER ENGINEERING}}
+                {DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} % Your department's name in capitals - this is not currently used anywhere in the template, cite it with \DEPTNAME if you want it
+                {DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}
 %-------------------------------------------------                
 %\group{\texorpdfstring{\href{Research Group Web Site URL Here (include http://)} % Your research group's URL
 %                {Research Group Name}} % Your research group's name - this is currently used in the title page 
@@ -256,7 +269,7 @@
       \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
+      {\large A report submitted in partial fulfillment for the \par}
       {\large degree of \degreename \par}
       \bigskip
       \bigskip
@@ -298,11 +311,12 @@
     \setlength{\parskip}{0pt}
     %{\normalsize \UNIVNAME \par} % University name in capitals
     %\bigskip
-    {\centering{\huge{\textit{Abstract}}} \par}
+    {\centering{\huge{\textbf{Abstract}}} \par}
     \bigskip
     \HRule \\[0.4cm] % Horizontal line
 		Name of the student:	 \textbf{\authornames}	\hfill Roll No: \textbf{13075002} \\
-		Degree for which submitted:  \textbf{B.Tech.} \hfill Department:  \textbf{Computer Engineering} \\
+		Degree for which submitted:  \textbf{B.Tech.} \hfill \\
+		Department:  \textbf{Computer Science and Engineering} \\
 		Thesis title: \textbf{\@title}\\
 		Thesis supervisor:  \textbf{\supname}\\
 		Month and year of thesis submission: \textbf{{\large \today}\\[0.4cm] }
@@ -386,7 +400,7 @@
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
-\newcommand\listconstants{Physical Constants}
+\newcommand\listconstants{Definitions And Notations}
 \usepackage{longtable}
 \newcommand\listofconstants[2]{
 \btypeout{\listconstants}
@@ -412,7 +426,7 @@
 \btypeout{Acknowledgements}
 \addtotoc{Acknowledgements}
 \thispagestyle{plain}
-\begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
+\begin{center}{\huge{\textbf{Acknowledgements}} \par}\end{center}
 {\normalsize #1}
 \vfil\vfil\null
 
